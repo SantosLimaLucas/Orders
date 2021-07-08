@@ -1,0 +1,81 @@
+<mat-tab-group mat-align-tabs="start" style="padding-top: 40px; padding-left: 2%; padding-right: 2%;">
+    <mat-tab label="PRODUCTS">
+      <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
+        <ng-container *ngFor="let product of productsList" style="margin: 0.5%;">
+
+          <mat-card class="mat-card-product" fxFlex="0 1 calc(33% - 11px)"
+          fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+            <mat-card-title class="mat-card-title-product">
+              <div class="row">
+                <p>
+                    <span fxFlex="70" fxLayoutAlign="start center">{{product.name}}</span>
+                    <span fxFlex></span> 
+                    <span fxFlex="25" fxLayoutAlign="end center">R${{product.price}}</span>
+                                     
+                </p>
+               
+              </div>              
+            </mat-card-title>
+      
+            <mat-card-content style="padding:2%;">
+              <p>
+                Category: <span>{{product.category}}</span>
+              </p>
+              <p>
+                Id: <span fxFlex="70">{{product.id}}</span>
+              </p> 
+              <p>
+                 
+                <button  (click)="deleteProduct(product.id)" mat-raised-button color="warn">DELETE</button>    
+              </p> 
+              
+              
+            </mat-card-content>
+          </mat-card>
+          
+        </ng-container>
+      </div>
+    </mat-tab>
+    <mat-tab label="ORDERS">
+      <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
+        <ng-container *ngFor="let order of ordersList" style="margin: 0.5%;">
+
+          <mat-card class="mat-card-product" fxFlex="0 1 calc(33% - 11px)"
+          fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+            <mat-card-title class="mat-card-title-product">
+              <div class="row"> 
+                
+                <p >
+                  <mat-list fxFlex="50"role="list">
+                    <ng-container *ngFor="let product of order.Productslist" style="margin: 0.1%;">
+                      <mat-list-item role="listitem">{{product.name}} R${{product.price}}</mat-list-item>
+                    </ng-container>
+                  </mat-list>
+                    
+                    <span fxFlex></span> 
+                    <span fxFlex="45" fxLayoutAlign="end center">Total: R${{order.TotalPrice}}</span>
+                                     
+                </p>
+               
+              </div>              
+            </mat-card-title>
+      
+            <mat-card-content style="padding:2%;">
+              <p>
+                Id: <span>{{order.id}}</span>
+              </p>
+              <p>
+                 
+                <button (click)="deleteOrder(order.id)" mat-raised-button color="warn">DELETE</button>    
+              </p> 
+              
+              
+            </mat-card-content>
+          </mat-card>
+          
+        </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>

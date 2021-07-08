@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-toolbar-row style="font-size: 1.5rem; height: 80px;">
+    <span>OrdersForm<mat-icon>shop</mat-icon></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button  (click)="addProducts()"><mat-icon>add</mat-icon>Products</button>
+    <button mat-raised-button  (click)="updateProducts()">Update Products</button> 
+    <button mat-raised-button (click)="addOrders()"><mat-icon>add</mat-icon>Orders</button>
+    <button mat-raised-button  (click)="updateOrders()">Update Orders</button> 
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<app-items-list></app-items-list>

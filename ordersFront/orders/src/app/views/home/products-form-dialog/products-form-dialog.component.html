@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>New Product</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="productsForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="name" name="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Product Price</mat-label>
+      <input matInput formControlName="price" name="price">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Product Category</mat-label>
+      <input matInput formControlName="category" name="category">
+    </mat-form-field>
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createProduct()">Add Product</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>
